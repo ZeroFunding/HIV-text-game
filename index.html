@@ -119,17 +119,26 @@
         }
         #result-container {
             display: none;
-            background-color: #dff9fb;
-            padding: 25px;
-            border-radius: 8px;
             margin-bottom: 20px;
+        }
+        .result-box {
+            background-color: #dff9fb;
+            padding: 20px 25px;
+            border-radius: 8px;
+            margin-bottom: 15px;
             border-left: 6px solid #22a6b3;
             text-align: left;
-        }
-        #result-text {
-            font-size: 1.2em;
+            font-size: 1.15em;
             line-height: 1.6;
-            margin-bottom: 25px;
+        }
+        .result-box.fact-box {
+            background-color: #82de6b;
+            border-left-color: #4b854d;
+        }
+        .result-box.note-box {
+            background-color: #FFFFFF;
+            border-left-color: #FFFFFF;
+            color: #8c4a4a;
         }
         #next-btn {
             background-color: #2ecc71;
@@ -203,7 +212,9 @@
             </div>
 
             <div id="result-container">
-                <div id="result-text"></div>
+                <div id="result-text-1" class="result-box"></div>
+                <div id="result-text-2" class="result-box fact-box"></div>
+                <div id="result-text-3" class="result-box note-box"></div>
                 <button id="next-btn" onclick="nextScene()">Next Scene</button>
             </div>
         </div>
@@ -254,18 +265,23 @@
                 },
                 choices: {
                     A: { 
-                        text: { zh: "「就這一次，沒關係。」", en: "It’s fine. Just this once." }, 
-                        result: { zh: "事情發生了。房間慢慢安靜下來。感覺很好。HIV可以透過無保護性行為傳播。但性行為之後，仍然可以預防。如果你發生了高危性行為，PEP（暴露後預防）在72小時內開始服用可以預防感染。如果你有性生活，每3–6個月定期檢測是唯一知道自己狀態的方法。一次的意外，定義不了你是誰。", 
-                                  en: "It happened; it felt good. HIV can be transmitted through unprotected sex. After sex, it is still preventable. If you had unprotected sex, PEP (post-exposure prophylaxis) can prevent infection if the first dose is taken within 72 hours, but ideally within 24 hours for maximal protection. The HK government recommends that anyone “who have had sex should get tested at least once”. People with new or ongoing risk exposure (e.g. multiple sex partners, sex workers, men who have sex with men) should undergo regular HIV testing. One night does not define you." 
-                                } 
+                        text: { zh: "XxX", en: "XxX" }, 
+                        result: { zh: ["XXX", 
+                                       "BBB",
+                                       "CCC"],
+                                  en: ["XXX", 
+                                       "BBB",
+                                       "CCC"] } 
                     },
                     B: { 
-                        text: { zh: "「我們停下吧，我沒有保護措施。」", en: "Let’s stop. I don’t have protection." }, 
-                        result: { zh: "你說了出來。房間的溫度降了一度。她說：「你說得對。性行為應該使用安全套這樣的保護措施。」安全套預防HIV的有效率約為80–95%。(https://pubmed.ncbi.nlm.nih.gov/9141163/) 結果發現安全套已經用完了，她說沒關係。無保護性行為還是發生了。", 
-                                  en: "You say it. The atmosphere in the room cools. She said, \"You are right. Protective measures like condoms should be used for sex.\" Condoms are 90 to 95% effective when used consistently (https://pubmed.ncbi.nlm.nih.gov/9141163/). However, all the condoms are used up, but your partner says you should still proceed . Unprotected sex is performed." 
-                                } 
+                        text: { zh: "xxx", en: "xxx" }, 
+                        result: { zh: ["XXX", 
+                                       "BBB",
+                                       "CCC"],
+                                  en: ["XXX", 
+                                       "BBB",
+                                       "CCC"] }
                     }
-                }
             },
             {
                 image: "image_2.png",
@@ -275,18 +291,23 @@
                 },
                 choices: {
                     A: { 
-                        text: { zh: "當作什麼都沒發生。告訴自己你沒事。", en: "Assume nothing happens. Tell yourself you are fine." }, 
-                        result: { zh: "你把手機扣在桌上。你刪掉了聊天記錄。你去上班、吃午飯。你覺得這兩三個星期以來什麼都沒變。某天晚上，你睡不著，發現自己發燒、發冷。你檢查自己的皮膚和喉嚨，發現和HIV皮疹的特徵很像。你打開手機；你知道這次不能再拖了，於是搜尋HIV檢測。事實： 逃避是面對恐懼的正常反應，但它會延誤治療。HIV如果不治療，會隨著時間削弱免疫系統。越早檢測，越早可以行動。", 
-                                  en: "You put your phone face down. You delete the chat. You go to work, eat lunch. You feel nothing has changed after these three weeks. One night, you can’t sleep, finding yourself with a fever and chills. You have checked your skin and throat, find similar traits with HIV rash. You open your phone; you know you cannot delay this time, so you search for HIV testing. Fact: Avoidance is a normal response to fear, but it delays treatment. HIV, if left untreated, weakens the immune system over time. The earlier you test, the earlier you can act." 
-                                } 
+                        text: { zh: "XxX", en: "XxX" }, 
+                        result: { zh: ["XXX", 
+                                       "BBB",
+                                       "CCC"],
+                                  en: ["XXX", 
+                                       "BBB",
+                                       "CCC"] } 
                     },
                     B: { 
-                        text: { zh: "今天就預約檢測。", en: "Book a test. Today." }, 
-                        result: { zh: "你找到一家機構。你打電話。「我想預約HIV檢測。」電話那頭的人很平靜、很友善。你可以明天來諮詢醫生，或者你想先領取一個檢測試劑盒？你掛斷電話。你坐在床上。你覺得自己快要吐了。但你預約了。這已經是一種行動。事實： 在香港，公共衛生診所（例如紅絲帶中心、關懷艾滋）的HIV檢測是免費且保密的。你不需要轉介信。在某些站點，你不需要提供真實姓名。檢測是唯一知道自己狀態的方法。", 
-                                  en: "You find an organization. You call. “I would like to book an HIV test.” The person on the line is calm and kind. You can come consult the doctor tomorrow, or do you want to pick up a test kit?. You hang up. You sit on your bed. You feel like you are going to be sick. But you booked the test. You took a brave step forward. Fact: HIV testing in Hong Kong is free from the Department of Health’s HIV Testing Services, and the self test kit can be done at home. However, it requires you to register and upload your HIV test results to the platform. HIV counselling and testing service is free, anonymous and confidential at AIDS Foundation, but requires you to go to their centres in person. You do not need a referral. Testing is the only way to know your status." 
-                                } 
+                        text: { zh: "xxx", en: "xxx" }, 
+                        result: { zh: ["XXX", 
+                                       "BBB",
+                                       "CCC"],
+                                  en: ["XXX", 
+                                       "BBB",
+                                       "CCC"] }
                     }
-                }
             },
             {
                 image: "image_3.png",
@@ -296,16 +317,23 @@
                 },
                 choices: {
                     A: { 
-                        text: { zh: "快速抗原檢測——採血，20分鐘內出結果", en: "Rapid antigen test: uses blood and obtains results within 20 minutes. " }, 
-                        result: { zh: "你要求配送一個快速抗原檢測試劑盒。你很快做了檢測，結果是陰性；你鬆了一口氣。一個月後，你發現症狀沒有消退。你再次訂購試劑盒，這一次結果是陽性。你很擔心，也責怪自己：為什麼第一個試劑盒這麼不準？事實： 快速檢測試劑盒的空窗期最長可達3個月，如果你的高危性行為發生在幾週內，結果可能不準確。血液中病毒量和抗原量低時，可能產生假結果。（需補充參考文獻）", 
-                                  en: "You ask for a delivery of a rapid antigen test. You quickly did the test and found the test results were negative; you were relieved. After 1 month, you don’t find symptoms going away. You re-ordered a test kit, and this time found it was positive. You are worried and blame why the first test kit worked so badly. Fact: Rapid test kit has a window period of longest 3 months, it may not be precise if your unsafe sex happens within weeks. A false result may be produced due to low viral and low antigen amounts in blood" } 
+                        text: { zh: "XxX", en: "XxX" }, 
+                        result: { zh: ["XXX", 
+                                       "BBB",
+                                       "CCC"],
+                                  en: ["XXX", 
+                                       "BBB",
+                                       "CCC"] } 
                     },
                     B: { 
-                        text: { zh: "去診所抽血，送實驗室化驗", en: "Go to a clinic and have blood drawn to obtain results" }, 
-                        result: { zh: "護士叫你不用擔心，開始抽血並送往實驗室。一週後結果出來：陽性。你很擔心。事實： 傳統抽血採用另一種檢測方法，更精確，可作為診斷標準。但如果你有高危、頻繁的性行為，無論異性戀還是同性戀，仍建議每3–6個月檢測一次。", 
-                                  en: "Nurse said to you no worry, and starts to draw blood and send to laboratory. The results return in 1 week. Results returned positive. You are worried. Fact: Traditional sampling uses another method to sample. It is more precise and acts as a diagnostic criterion. But it is still recommended to test every 3-6 months if you have dangerous and frequent sexual behaviours, whether you are heterosexual or homosexual." } 
+                        text: { zh: "xxx", en: "xxx" }, 
+                        result: { zh: ["XXX", 
+                                       "BBB",
+                                       "CCC"],
+                                  en: ["XXX", 
+                                       "BBB",
+                                       "CCC"] }
                     }
-                }
             },
             {
                 image: "image_4.png",
@@ -316,13 +344,21 @@
                 choices: {
                     A: { 
                         text: { zh: "XxX", en: "XxX" }, 
-                        result: { zh: "XXX", 
-                                  en: "XXX" } 
+                        result: { zh: ["XXX", 
+                                       "BBB",
+                                       "CCC"],
+                                  en: ["XXX", 
+                                       "BBB",
+                                       "CCC"] } 
                     },
                     B: { 
                         text: { zh: "xxx", en: "xxx" }, 
-                        result: { zh: "XXX", 
-                                  en: "xxx" } 
+                        result: { zh: ["XXX", 
+                                       "BBB",
+                                       "CCC"],
+                                  en: ["XXX", 
+                                       "BBB",
+                                       "CCC"] }
                     }
                 }
             }
@@ -348,7 +384,10 @@
         const btnA = document.getElementById('btn-a');
         const btnB = document.getElementById('btn-b');
         const resultContainer = document.getElementById('result-container');
-        const resultTextEl = document.getElementById('result-text');
+        const resultBoxes = [
+            document.getElementById('result-text-1'),
+            document.getElementById('result-text-2'),
+            document.getElementById('result-text-3')];
         const nextBtn = document.getElementById('next-btn');
 
         // 生成 SVG 錯誤圖片的輔助函數
@@ -381,7 +420,16 @@
                 nextBtn.textContent = uiText[currentLanguage].nextBtn;
 
                 if (currentChoice) {
-                    resultTextEl.textContent = scene.choices[currentChoice].result[currentLanguage];
+                const results = scene.choices[currentChoice].result[currentLanguage];
+                resultBoxes.forEach((box, index) => {
+                    if (results[index]) {
+                        box.textContent = results[index];
+                        box.style.display = 'block';
+                    }
+                    else {
+                        box.style.display = 'none'; // 如果該格沒有內容則自動隱藏
+                    }
+                                                    });
                 }
                 
                 sceneImage.onerror = function() { this.src = getErrorImageSvg(errorMsg); };
