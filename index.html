@@ -211,6 +211,7 @@
         <!-- 結束畫面 -->
         <div id="end-screen" class="end-screen">
             <h1 id="end-title"></h1>
+            <img id="end-image" class="scene-img" src="end_image.png" alt="End Screen Image">
             <p id="end-desc"></p>
             <button id="replay-btn" onclick="location.reload()"></button>
         </div>
@@ -338,6 +339,7 @@
         const startScreen = document.getElementById('start-screen');
         const gameContent = document.getElementById('game-content');
         const endScreen = document.getElementById('end-screen');
+        const endImage = document.getElementById('end-image');
         
         const sceneImage = document.getElementById('scene-image');
         const startImage = document.getElementById('start-image');
@@ -388,6 +390,7 @@
                 document.getElementById('end-title').textContent = uiText[currentLanguage].endTitle;
                 document.getElementById('end-desc').textContent = uiText[currentLanguage].endDesc;
                 document.getElementById('replay-btn').textContent = uiText[currentLanguage].replayBtn;
+                endImage.onerror = function() { this.src = getErrorImageSvg(errorMsg); };
             }
         }
 
