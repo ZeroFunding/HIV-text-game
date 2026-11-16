@@ -142,6 +142,28 @@
             color: #8c4a4a;
             text-align: center;
         }
+        /* 按鈕並排 */
+        .result-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        /* 返回重選按鈕 */
+        #undo-btn {
+            background-color: #95a5a6;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+            flex: 1;
+        }
+        #undo-btn:hover {
+            background-color: #7f8c8d;
+        }
         #next-btn {
             background-color: #2ecc71;
             padding: 15px 30px;
@@ -152,8 +174,7 @@
             color: white;
             font-weight: bold;
             transition: 0.3s;
-            display: block;
-            width: 100%;
+            flex: 2;
         }
         #next-btn:hover {
             background-color: #27ae60;
@@ -217,7 +238,10 @@
                 <div id="result-text-1" class="result-box"></div>
                 <div id="result-text-2" class="result-box fact-box"></div>
                 <div id="result-text-3" class="result-box note-box"></div>
-                <button id="next-btn" onclick="nextScene()">Next Scene</button>
+                <div class="result-actions">
+                    <button id="undo-btn" onclick="undoChoice()">Undo</button>
+                    <button id="next-btn" onclick="nextScene()">Next Scene</button>
+                </div>
             </div>
         </div>
 
@@ -238,6 +262,7 @@
                 startTitle: "1 in 500",
                 startDesc: "1 in 500：HIV感染者的處境",
                 startBtn: "開始遊戲",
+                undoBtn: "重新選擇",
                 nextBtn: "前往下一幕",
                 endTitle: "冒險結束！",
                 endDesc: "恭喜你通關了這個小遊戲！",
@@ -249,6 +274,7 @@
                 startTitle: "1 in 500",
                 startDesc: "1 in 500:  What a person living with HIV faces",
                 startBtn: "Start Game",
+                undoBtn: "Back",
                 nextBtn: "Proceed to Next Scene",
                 endTitle: "Adventure Completed!",
                 endDesc: "Congratulations on clearing this mini-game!",
@@ -393,6 +419,7 @@
             document.getElementById('result-text-1'),
             document.getElementById('result-text-2'),
             document.getElementById('result-text-3')];
+        const undoBtn = document.getElementById('undo-btn');
         const nextBtn = document.getElementById('next-btn');
 
         // 生成 SVG 錯誤圖片的輔助函數
@@ -422,8 +449,9 @@
                 descriptionEl.textContent = scene.description[currentLanguage];
                 btnA.textContent = scene.choices.A.text[currentLanguage];
                 btnB.textContent = scene.choices.B.text[currentLanguage];
+                undoBtn.textContent = uiText[currentLanguage].undoBtn;
                 nextBtn.textContent = uiText[currentLanguage].nextBtn;
-
+                
                 if (currentChoice) {
                 const results = scene.choices[currentChoice].result[currentLanguage];
                 resultBoxes.forEach((box, index) => {
@@ -480,7 +508,12 @@
             resultContainer.style.display = 'block';
             updateUI();
         }
-
+        // 玩家重新選擇
+        function undoChoice() {
+            currentChoice = null;
+            resultContainer.style.display = 'none';
+            choicesDiv.style.display = 'flex';
+        }
         // 前往下一幕
         function nextScene() {
             currentSceneIndex++;
