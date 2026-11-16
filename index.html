@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>迷你文字冒險 / Mini Text Adventure</title>
+    <title>1 in 500</title>
     <style>
         body {
             font-family: "Microsoft JhengHei", "PingFang TC", -apple-system, sans-serif;
@@ -217,7 +217,7 @@
     </div>
 
     <script>
-        // 雙語靜態文字字典
+        // Button Content
         const uiText = {
             zh: {
                 toggleBtn: "English",
@@ -243,7 +243,7 @@
             }
         };
 
-        // 場景資料（包含中英雙語）
+        // Scene Content
         const scenes = [
             {
                 image: "image_1.png",
@@ -390,7 +390,6 @@
             }
 
             const scene = scenes[currentSceneIndex];
-            // 每次載入新場景重置 src 以觸發載入或錯誤事件
             sceneImage.src = scene.image; 
             
             choicesDiv.style.display = 'flex';
