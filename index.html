@@ -221,6 +221,7 @@
             <h1 id="start-title"></h1>
             <img id="start-image" class="scene-img" src="start_image.png" alt="Start Menu Image">
             <div id="start-desc" class="text-desc"></div>
+            <div id="start-fact" class="result-box fact-box"></div>
             <button id="start-btn" onclick="startGame()"></button>
         </div>
 
@@ -262,6 +263,7 @@
                 toggleBtn: "English",
                 startTitle: "1 in 500",
                 startDesc: "1 in 500：HIV感染者的處境",
+                startFace: "香港累計錄得約12,905宗HIV個案，人口約700萬, 也就是約500分之1。香港約一半的新呈報個案屬於「晚發現， 確診時CD4細胞已低於200，或已發病為愛滋病。晚發現意味著這個人已經帶著HIV生活了好幾年，卻一直不知道，一直沒有治療。近一半的新呈報個案不屬於傳統高風險群組。在這些「低風險」人士當中，六至七成是晚發現，而且四分之三在確診前從未做過HIV測試。香港的目標是「三零」：零死亡、零新增、零歧視。HIV檢測是免費、匿名、保密的， 不需要轉介信。但政策目標不等於現實。當一半新個案是晚發現，而「低風險」晚發現者中有四分之三從未檢測，那個「我們有目標」與「人們真的去檢測」之間的距離，就是這個遊戲的目的。你即將扮演一個從沒想過那個數字跟自己有關的人。接下來的一切是真實的體驗。底下的數據也是。"
                 startBtn: "開始遊戲",
                 undoBtn: "重新選擇",
                 nextBtn: "前往下一幕",
@@ -275,6 +277,7 @@
                 toggleBtn: "繁體中文",
                 startTitle: "1 in 500",
                 startDesc: "1 in 500:  What a person living with HIV faces",
+                startFact: "Hong Kong has recorded roughly 12,905 HIV cases among a population of about 7 million, about 1 in 500. Around half of newly reported HIV cases in Hong Kong are “late presenters”, people diagnosed when their CD4 count is already below 200, or AIDS has already developed. Late diagnosis means the person has been living with HIV for years without knowing, and without treatment. Nearly half of new reported cases are not from traditionally high-risk groups. Among these “low-risk” individuals, 60–70% are late presenters, and three-quarters had never tested for HIV before their diagnosis. The game’s protagonist is one of these people: someone who never thought it would be them.Hong Kong’s stated goal has been the “Three Zeros”: zero deaths, zero new infections, zero discrimination. But a policy goal is not the same as lived reality. With half of new cases arriving late, and three-quarters of the “low-risk” late presenters having never tested, the gap between “we have a target” and “people actually get tested” is the aim of this game."
                 startBtn: "Start Game",
                 undoBtn: "Back",
                 nextBtn: "Proceed to Next Scene",
@@ -444,6 +447,7 @@
             if (gameState === 'start') {
                 document.getElementById('start-title').textContent = uiText[currentLanguage].startTitle;
                 document.getElementById('start-desc').textContent = uiText[currentLanguage].startDesc;
+                document.getElementById('start-fact').textContent = uiText[currentLanguage].startFact;
                 document.getElementById('start-btn').textContent = uiText[currentLanguage].startBtn;
                 startImage.onerror = function() { this.src = getErrorImageSvg(errorMsg); };
             } 
