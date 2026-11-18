@@ -263,7 +263,7 @@
                 toggleBtn: "English",
                 startTitle: "1 in 500",
                 startDesc: "1 in 500：HIV感染者的處境",
-                startFact: "香港累計錄得約12,905宗HIV個案，人口約700萬, 也就是約500分之1。香港約一半的新呈報個案屬於「晚發現， 確診時CD4細胞已低於200，或已發病為愛滋病。晚發現意味著這個人已經帶著HIV生活了好幾年，卻一直不知道，一直沒有治療。近一半的新呈報個案不屬於傳統高風險群組。在這些「低風險」人士當中，六至七成是晚發現，而且四分之三在確診前從未做過HIV測試。香港的目標是「三零」：零死亡、零新增、零歧視。HIV檢測是免費、匿名、保密的， 不需要轉介信。但政策目標不等於現實。當一半新個案是晚發現，而「低風險」晚發現者中有四分之三從未檢測，那個「我們有目標」與「人們真的去檢測」之間的距離，就是這個遊戲的目的。你即將扮演一個從沒想過那個數字跟自己有關的人。接下來的一切是真實的體驗。底下的數據也是。",
+                startFact: "香港累計錄得約12,905宗HIV個案，人口約700萬, 也就是約500分之1。香港約一半的新呈報個案屬於「晚發現」， 確診時CD4細胞已低於200，或已發病為愛滋病。晚發現意味著這個人已經帶著HIV生活了好幾年，卻一直不知道，一直沒有治療。近一半的新呈報個案不屬於傳統高風險群組。在這些「低風險」人士當中，六至七成是晚發現，而且四分之三在確診前從未做過HIV測試。香港的目標是「三零」：零死亡、零新增、零歧視。HIV檢測是免費、匿名、保密的， 不需要轉介信。但政策目標不等於現實。當一半新個案是晚發現，而「低風險」晚發現者中有四分之三從未檢測，那個「我們有目標」與「人們真的去檢測」之間的距離，就是這個遊戲的目的。你即將扮演一個從沒想過那個數字跟自己有關的人。接下來的一切是真實的體驗。底下的數據也是。",
                 startBtn: "開始遊戲",
                 undoBtn: "重新選擇",
                 nextBtn: "前往下一幕",
@@ -309,10 +309,10 @@
                     },
                     B: { 
                         text: { zh: "「我們停下吧，我還沒有做保護措施。」", en: "Let’s stop. I don’t have protection yet." }, 
-                        result: { zh: ["你說了出來。房間的溫度降了一度。她說：「你說得對。性行為應該使用安全套這樣的保護措施。」（安全套預防HIV的有效率約為80–95%）(https://pubmed.ncbi.nlm.nih.gov/9141163/) 結果發現安全套已經用完了，她說沒關係。無保護性行為還是發生了。", 
+                        result: { zh: ["你說了出來。房間的溫度降了一度。她說：「你說得對。性行為應該使用安全套這樣的保護措施。」<a href=\"https://pubmed.ncbi.nlm.nih.gov/9141163/\" target=\"_blank\" rel=\"noopener noreferrer\">安全套預防HIV的有效率約為80–95%</a> 結果發現安全套已經用完了，她說沒關係。無保護性行為還是發生了。", 
                                        "你想起在哪裡聽過，HIV可以透過無保護性行為傳播。但性行為之後，仍然可以預防。如果你發生了高危性行為，PEP（暴露後預防）在72小時內開始服用可以預防感染，越早開始越好。如果你有性生活，檢測是唯一知道自己狀態的方法。",
                                        "一次的意外，定義不了你是誰，你只要知道下一步要做什麼。"],
-                                  en: ["You say it. The atmosphere in the room cools. She said, \"You are right. Protective measures like condoms should be used for sex.\" Condoms are 90 to 95% effective when used consistently (https://pubmed.ncbi.nlm.nih.gov/9141163/). However, all the condoms are used up, but your partner said, ‘It doesn’t matter.’ Unprotected sex is performed.", 
+                                  en: ["You say it. The atmosphere in the room cools. She said, \"You are right. Protective measures like condoms should be used for sex.\" <a href=\"https://pubmed.ncbi.nlm.nih.gov/9141163/\" target=\"_blank\" rel=\"noopener noreferrer\">Condoms are 90 to 95% effective when used consistently </a>. However, all the condoms are used up, but your partner said, ‘It doesn’t matter.’ Unprotected sex is performed.", 
                                        "HIV can be transmitted through unprotected sex. After sex, it is still preventable. If you had unprotected sex, PEP (post-exposure prophylaxis) can prevent infection if the first dose is taken within 72 hours, but ideally within 24 hours, and it should be started as soon as possible. The HK government recommends that anyone “who has had sex should get tested at least once”. People with new or ongoing risk exposure (e.g. multiple sex partners, sex workers, men who have sex with men) should undergo regular HIV testing.",
                                        "One night does not define you. All you need to know is what the next step is."] }
                     }
@@ -463,7 +463,7 @@
                 const results = scene.choices[currentChoice].result[currentLanguage];
                 resultBoxes.forEach((box, index) => {
                     if (results[index]) {
-                        box.textContent = results[index];
+                        box.innerHTML = results[index];
                         box.style.display = 'block';
                     }
                     else {
